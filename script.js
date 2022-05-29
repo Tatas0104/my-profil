@@ -38,12 +38,10 @@ const html = document.querySelector('html');
 const bulatan=document.querySelector('#bulatan')
 darkToggle.addEventListener('click', function () {
   if (darkToggle.checked) {
-    bulatan.classList.add('my-margin')
     html.classList.add('dark');
     localStorage.theme = 'dark';
   } else {
     html.classList.remove('dark');
-    bulatan.classList.remove('my-margin')
     localStorage.theme = 'light';
   }
 });
@@ -51,8 +49,6 @@ darkToggle.addEventListener('click', function () {
 // pindahkan posisi toggle sesuai mode
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   darkToggle.checked = true;
-  bulatan.classList.add('my-margin')
 } else {
   darkToggle.checked = false;
-  bulatan.classList.remove('my-margin')
 }
